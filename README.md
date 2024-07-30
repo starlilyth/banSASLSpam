@@ -1,5 +1,5 @@
 # banSASLSpam
-Reads mail logs and bans SASL login spammers
+Reads Postfix mail logs and bans SASL login spammers
 
 This works on Rocky 9 server and probably any clone or derivative. 
 Uses perl with no additional modules. Requires pflogsumm and firewalld as helpers. 
