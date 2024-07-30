@@ -12,3 +12,5 @@ You may wish to adjust the ban thresholds at the top of the script.
 USAGE: run the script with no flags for interactive use. 
 Add a space and a 'y' to run without interaction. 
 Add a space and a 'b' to just see the list of banned IPs. 
+
+![Action shot](https://github.com/starlilyth/banSASLSpam/blob/main/Screen%20Shot%202024-06-15%20at%209.02.43%20PM.png)
