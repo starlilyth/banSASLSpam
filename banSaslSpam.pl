@@ -101,6 +101,10 @@ sub get_log_entries {
       push @ips, ($1);
       $logged_count++;
     }
+    if ($line =~ /non-SMTP command from .*?\[(\d+.\d+.\d+.\d+)\]:/) {
+      push @ips, ($1);
+      $logged_count++;
+    }
   }
   print "\033[0;33m $logged_count\033[0m entries logged\n";
   return @ips;
