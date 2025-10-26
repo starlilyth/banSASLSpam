@@ -7,7 +7,7 @@ use warnings;
 my $threshold16 = 6;
 # 255 IPs in a /24
 my $threshold24 = 1;
-
+# Define a protected /24 or /16
 my $protected_range = "";
 my $flag = $ARGV[0];
 my $notice = "no";
