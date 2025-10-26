@@ -8,6 +8,7 @@ my $threshold16 = 6;
 # 255 IPs in a /24
 my $threshold24 = 1;
 
+my $protected_range = "";
 my $flag = $ARGV[0];
 my $notice = "no";
 $notice = "yes" if (defined $flag && $flag eq "y");
@@ -113,15 +114,19 @@ sub get_log_entries {
 sub banit {
   my @ranges = @_;
   my $banrange = $ranges[0];
-  my $input;
-  if (defined $flag && $flag eq "y") {
-    $input = $flag
+  if (defined $protected_range && $protected_range == $banrange) {
+    print "\033[0;33m Skipping protected range $protected_range\033[0m \n";
   } else {
-    print " IPs found in range $banrange. Ban it? y/n ";
-    $input = <>; chomp($input);
-  }
-  if ($input eq "y") {
-    ban_range($banrange);
+    my $input;
+    if (defined $flag && $flag eq "y") {
+      $input = $flag
+    } else {
+      print " IPs found in range $banrange. Ban it? y/n ";
+      $input = <>; chomp($input);
+    }
+    if ($input eq "y") {
+      ban_range($banrange);
+    }
   }
 }
 
