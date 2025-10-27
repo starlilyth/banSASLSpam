@@ -114,7 +114,7 @@ sub get_log_entries {
 sub banit {
   my @ranges = @_;
   my $banrange = $ranges[0];
-  if (defined $protected_range && $protected_range == $banrange) {
+  if (defined $protected_range && $protected_range eq $banrange) {
     print "\033[0;33m Skipping protected range $protected_range\033[0m \n";
   } else {
     my $input;
